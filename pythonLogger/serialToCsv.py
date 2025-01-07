@@ -8,7 +8,7 @@ def log_serial_to_csv(port, baudrate, output_file):
         print(f"Connected to {port} at {baudrate} baud.")
 
         # CSV 파일 열기
-        with open(output_file, mode='w', newline='') as csvfile:
+        with open("data/"+output_file, mode='w', newline='') as csvfile:
             csv_writer = csv.writer(csvfile)
 
             # 헤더 추가
@@ -47,6 +47,6 @@ def log_serial_to_csv(port, baudrate, output_file):
 # 사용자 설정
 serial_port = 'COM4'  # Windows: 'COM3', Linux/Mac: '/dev/ttyUSB0'
 baud_rate = 115200
-output_csv_file = 'stop3.csv'
+output_csv_file = 'test.csv'
 
 log_serial_to_csv(serial_port, baud_rate, output_csv_file)
